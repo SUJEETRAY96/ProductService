@@ -1,6 +1,7 @@
 package org.example.productservice.services;
 
 import org.example.productservice.dtos.FakeProductDTO;
+import org.example.productservice.exceptions.ProductNotFoundException;
 import org.example.productservice.models.Category;
 import org.example.productservice.models.Product;
 import org.example.productservice.thirdPartyClient.RestClient;
@@ -15,7 +16,7 @@ public class FakeProductServiceImpl implements ProductService{
         this.restClient = restClient;
     }
     @Override
-    public Product getProductById(Long id) {
+    public Product getProductById(Long id) throws ProductNotFoundException {
         return getProductFromFakeProductDTO(restClient.getProduct(id));
     }
     private Product getProductFromFakeProductDTO(FakeProductDTO fakeProductDTO){

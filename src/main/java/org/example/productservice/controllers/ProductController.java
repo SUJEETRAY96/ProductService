@@ -1,5 +1,6 @@
 package org.example.productservice.controllers;
 
+import org.example.productservice.exceptions.ProductNotFoundException;
 import org.example.productservice.models.Product;
 import org.example.productservice.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class ProductController {
         this.productService = productService;
     }
     @GetMapping("/{id}")
-    public Product getProductById(@PathVariable("id") Long id){
+    public Product getProductById(@PathVariable("id") Long id) throws ProductNotFoundException {
         return productService.getProductById(id);
     }
 }

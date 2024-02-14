@@ -1,2 +1,11 @@
-package org.example.productservice.dtos;public class ExceptionDTO {
+package org.example.productservice.dtos;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
+public class ExceptionDTO {
+    private String message;
+    private String status;
 }
