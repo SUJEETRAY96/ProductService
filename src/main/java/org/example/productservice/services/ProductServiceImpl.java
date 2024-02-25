@@ -5,12 +5,13 @@ import org.example.productservice.models.Category;
 import org.example.productservice.models.Product;
 import org.example.productservice.repo.CategoryRepo;
 import org.example.productservice.repo.ProductRepo;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
+@Primary
 @Service("SelfProductService")
 public class ProductServiceImpl implements ProductService{
 
